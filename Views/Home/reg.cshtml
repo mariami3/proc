@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<h2>Регистрация</h2>
+<form method="post" asp-action="reg">
+    <label for="fullname">Полное имя</label>
+    <input type="text" name="fullName" required />
+
+    <label for="email">Email</label>
+    <input type="email" name="email" required />
+
+    <label for="phone">Телефон</label>
+    <input type="text" name="phone" required />
+
+    <label for="password">Пароль</label>
+    <input type="password" name="password" required />
+
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+
+@if (ViewBag.ErrorMessage != null)
+{
+    @ViewBag.ErrorMessage
+}
+<a asp-action="Aut">Авторизация</a>
